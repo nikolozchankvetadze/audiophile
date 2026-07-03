@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/CSS/cart.css">
+    <link rel="stylesheet" href="/CSS/checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-inner">
+            <img src="/assets/audiophile.png" alt="Audiophile" class="logo-img">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="headphones.html">Headphones</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="earphones.html">Earphones</a></li>
+                </ul>
+            </nav>
+            <button class="cart-btn">
+                <img src="/assets/shop.png" alt="Cart">
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="index.html" class="go-back">Go Back</a>
+
+            <div class="checkout-layout">
+                <form id="checkout-form" class="checkout-form" novalidate>
+                    <h1>Checkout</h1>
+
+                    <div class="form-section">
+                        <p class="section-label billing-label">Billing Details</p>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Alexei Ward">
+                                <span class="error-msg" id="name-error"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="alexei@mail.com">
+                                <span class="error-msg" id="email-error"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 202-555-0136">
+                                <span class="error-msg" id="phone-error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <p class="section-label shipping-label">Shipping Info</p>
+                        <div class="form-grid">
+                            <div class="form-field full-width">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address" placeholder="1137 Williams Avenue">
+                                <span class="error-msg" id="address-error"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip" name="zip" placeholder="10001">
+                                <span class="error-msg" id="zip-error"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" placeholder="New York">
+                                <span class="error-msg" id="city-error"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="country">Country</label>
+                                <input type="text" id="country" name="country" placeholder="United States">
+                                <span class="error-msg" id="country-error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <p class="section-label payment-label">Payment Details</p>
+                        <div class="form-grid payment-grid">
+                            <p class="payment-method-label">Payment Method</p>
+                            <div class="payment-options">
+                                <label class="payment-option" for="pay-emoney">
+                                    <input type="radio" id="pay-emoney" name="payment" value="emoney" checked>
+                                    <span>e-Money</span>
+                                </label>
+                                <label class="payment-option" for="pay-cod">
+                                    <input type="radio" id="pay-cod" name="payment" value="cod">
+                                    <span>Cash on Delivery</span>
+                                </label>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="emoney-number">e-Money Number</label>
+                                <input type="text" id="emoney-number" name="emoneyNumber" placeholder="238521993">
+                                <span class="error-msg" id="emoney-number-error"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="emoney-pin">e-Money PIN</label>
+                                <input type="text" id="emoney-pin" name="emoneyPin" placeholder="6891">
+                                <span class="error-msg" id="emoney-pin-error"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <aside class="checkout-summary">
+                    <h2>Summary</h2>
+                    <div id="summary-items"></div>
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>Total</span>
+                            <span id="summary-total">$ 0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="summary-shipping">$ 50</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>VAT (Included)</span>
+                            <span id="summary-vat">$ 0</span>
+                        </div>
+                        <div class="summary-row grand-total">
+                            <span>Grand Total</span>
+                            <span id="summary-grand-total">$ 0</span>
+                        </div>
+                    </div>
+                    <button type="submit" form="checkout-form" class="continue-btn">Continue &amp; Pay</button>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <img src="/assets/audiophile.png" alt="Audiophile" class="footer-logo">
+                    <nav>
+                        <ul class="nav-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="headphones.html">Headphones</a></li>
+                            <li><a href="speakers.html">Speakers</a></li>
+                            <li><a href="earphones.html">Earphones</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-body">
+                    <p class="footer-desc">
+                        Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we're open 7 days a week.
+                    </p>
+                    <div class="footer-bottom">
+                        <p class="footer-copyright">Copyright 2021. All Rights Reserved</p>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" aria-label="Facebook"><img src="/assets/facebook.png" alt=""></a>
+                            <a href="https://x.com" aria-label="Twitter"><img src="/assets/twitter.png" alt=""></a>
+                            <a href="https://instagram.com" aria-label="Instagram"><img src="/assets/instagram.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="/JS/checkout.js"></script>
+<script src="/JS/cart.js"></script>
+</body>
+</html>
