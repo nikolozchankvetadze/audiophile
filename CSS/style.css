@@ -226,7 +226,7 @@ body{
 
 
 .zx7-banner{
-    background: #f1f1f1 url("assets/zx7-speaker.png") no-repeat left bottom;
+    background: #f1f1f1 url("../assets/zx7-speaker.png") no-repeat left bottom;
     background-size: cover;
     border-radius: 8px;
     height: 400px;
